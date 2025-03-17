@@ -8,29 +8,37 @@ int main()
     char choice;
 
     // Loop until the file exists
-    while (true) {
+    while (true)
+    {
         cout << "Enter the file name to encrypt or decrypt (with extension): ";
         cin >> fileName;
 
         ifstream inputFile(fileName);  // Check if the file exists
-        if (!inputFile) {
+        if (!inputFile)
+        {
             cerr << "Error: The file '" << fileName << "' does not exist. Please try again." << endl;
-        } else {
+        }
+        else
+        {
             break;  // Exit the loop if the file exists
         }
     }
 
     // Prompt for encryption or decryption choice
-    while (true) {
+    while (true)
+    {
         cout << "Do you want to encrypt or decrypt the file? (e/d): ";
         cin >> choice;
 
-        if (choice == 'e') {  // Encryption
+        if (choice == 'e')
+        {  // Encryption
             vector<unsigned char> key;
             generateKey(fileName, key);  // Generate the key
             processFile(fileName, key, true);  // Encrypt the file
             break;
-        } else if (choice == 'd') {  // Decryption
+        }
+        else if (choice == 'd')
+        {  // Decryption
             cout << "Enter the key file name: ";
             cin >> keyFileName;
             vector<unsigned char> key;
@@ -38,7 +46,9 @@ int main()
             processFile(fileName, key, false);  // Decrypt the file
             deleteKeyFile(fileName);  // Delete the key file
             break;
-        } else {
+        }
+        else
+        {
             cerr << "Invalid choice! Please enter 'e' or 'd'." << endl;
         }
     }
