@@ -14,5 +14,4 @@ This project implements a simple **file encryption system** using the **XTEA (eX
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/yourusername/your-repository.git
-   cd your-repository
+   git clone https://github.com/AngelCruzGtur/Encrypt.git
